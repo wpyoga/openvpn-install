@@ -1,6 +1,6 @@
 **New: [wireguard-install](https://github.com/Nyr/wireguard-install) is also available.**
 
-This project was forked from [openvpn-install](https://github.com/Nyr/openvpn-install) and subsequently modularized. In order to build the main distributable script, the modular script files are merged using [merge-shell](https://github.com/wpyoga/merge-shell). You can use the `Makefile` to test the correctness of the merged script.
+> This project was forked from [Nyr/openvpn-install](https://github.com/Nyr/openvpn-install) and subsequently modularized. In order to build the main distributable script, the modular script files are merged using [merge-shell](https://github.com/wpyoga/merge-shell). You can use the `Makefile` to test the correctness of the merged script.
 
 ## openvpn-install
 OpenVPN [road warrior](http://en.wikipedia.org/wiki/Road_warrior_%28computing%29) installer for Ubuntu, Debian, CentOS and Fedora.
