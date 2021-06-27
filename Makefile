@@ -1,18 +1,7 @@
 SPLIT_SCRIPTS = \
 	openvpn-install-split.sh \
-	split-scripts/nonexistent-openvpn-noindent.sh \
-	split-scripts/utils-openvpn.sh \
-	split-scripts/check-sanity.sh \
-	split-scripts/detect-os.sh \
-	split-scripts/existing-openvpn-noindent.sh \
-	multi-line-strings/openvpn-iptables.service-ipv6.sh \
-	multi-line-strings/disable-limitnproc.conf.sh \
-	multi-line-strings/openvpn-iptables.service.sh \
-	multi-line-strings/server.conf-2.sh \
-	multi-line-strings/client-common.txt.sh \
-	multi-line-strings/openvpn-iptables.service-tail.sh \
-	multi-line-strings/server.conf.sh \
-	multi-line-strings/dh.pem.sh \
+	split-scripts/*.sh \
+	multi-line-strings/*.sh \
 
 all: openvpn-install-merged.sh
 
