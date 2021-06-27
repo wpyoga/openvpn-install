@@ -56,4 +56,3 @@ if [[ "$os" == "centos" && "$os_version" -lt 7 ]]; then
 This version of CentOS is too old and unsupported."
 	exit
 fi
-

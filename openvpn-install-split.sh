@@ -7,6 +7,8 @@
 
 # @MERGE
 . split-scripts/detect-os.sh
+
+# @MERGE
 . split-scripts/check-sanity.sh
 
 # @MERGE
