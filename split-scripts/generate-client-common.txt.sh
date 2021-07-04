@@ -1,3 +1,5 @@
+# If the server is behind NAT, use the correct IP address
+[[ -n "$public_ip" ]] && ip="$public_ip"
 # client-common.txt is created so we have a template to add further users later
 # @MULTILINE
 echo "client

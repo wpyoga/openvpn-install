@@ -6,18 +6,38 @@
 
 
 # @MERGE
-. split-scripts/detect-os.sh
+. main-script-parts/detect-os.sh
 
 # @MERGE
-. split-scripts/check-requirements.sh
+. main-script-parts/check-requirements.sh
 
 # @MERGE
-. split-scripts/utils-openvpn.sh
+. main-script-parts/utils-openvpn.sh
 
 if [[ ! -e /etc/openvpn/server/server.conf ]]; then
 	# @MERGE
-	. split-scripts/nonexistent-openvpn.sh
+	. main-script-parts/install-openvpn.sh
 else
 	# @MERGE
-	. split-scripts/existing-openvpn.sh
+	. main-script-parts/choose-action.sh
+	case "$option" in
+		1)
+			# @MERGE
+			. split-scripts/add-client.sh
+			exit
+		;;
+		2)
+			# @MERGE
+			. split-scripts/revoke-client.sh
+			exit
+		;;
+		3)
+			# @MERGE
+			. split-scripts/uninstall-openvpn.sh
+			exit
+		;;
+		4)
+			exit
+		;;
+	esac
 fi

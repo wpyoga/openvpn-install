@@ -1,7 +1,6 @@
 SPLIT_SCRIPTS = \
 	openvpn-install-split.sh \
 	split-scripts/*.sh \
-	multi-line-strings/*.sh \
 
 all: openvpn-install-merged.sh
 

@@ -15,30 +15,28 @@ echo 'Welcome to this OpenVPN road warrior installer!'
 echo
 echo "OpenVPN installation is ready to begin."
 # @MERGE
-. split-scripts/firewall-install.sh
+. split-scripts/determine-firewall.sh
 read -n1 -r -p "Press any key to continue..."
 # @MERGE
-. split-scripts/container-disable-limitnproc.sh
+. split-scripts/disable-container-limitnproc.sh
 # @MERGE
 . split-scripts/install-dependencies.sh
 # @MERGE
-. split-scripts/firewalld-enable.sh
+. split-scripts/enable-firewalld.sh
 # @MERGE
 . split-scripts/generate-server-certs.sh
 # @MERGE
-. split-scripts/server.conf.sh
+. split-scripts/generate-server-config.sh
 # @MERGE
-. split-scripts/firewall-configure-forwarding.sh
+. split-scripts/configure-ip-forwarding.sh
 # @MERGE
-. split-scripts/selinux-config.sh
-# If the server is behind NAT, use the correct IP address
-[[ -n "$public_ip" ]] && ip="$public_ip"
+. split-scripts/configure-selinux.sh
 # @MERGE
-. multi-line-strings/client-common.txt.sh
-# Enable and start the OpenVPN service
-systemctl enable --now openvpn-server@server.service
-# Generates the custom client.ovpn
-new_client
+. split-scripts/generate-client-common.txt.sh
+# @MERGE
+. split-scripts/start-openvpn-service.sh
+# @MERGE
+. split-scripts/generate-client-config.sh
 echo
 echo "Finished!"
 echo
