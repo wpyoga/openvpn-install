@@ -1,5 +1,6 @@
-	# Generate server.conf
-	echo "local $ip
+# Generate server.conf
+# @MULTILINE
+echo "local $ip
 port $port
 proto $protocol
 dev tun
@@ -11,3 +12,4 @@ auth SHA512
 tls-crypt tc.key
 topology subnet
 server 10.8.0.0 255.255.255.0" > /etc/openvpn/server/server.conf
+# @MULTILINE-END

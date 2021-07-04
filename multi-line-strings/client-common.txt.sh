@@ -1,5 +1,6 @@
-	# client-common.txt is created so we have a template to add further users later
-	echo "client
+# client-common.txt is created so we have a template to add further users later
+# @MULTILINE
+echo "client
 dev tun
 proto $protocol
 remote $ip $port
@@ -13,3 +14,4 @@ cipher AES-256-CBC
 ignore-unknown-option block-outside-dns
 block-outside-dns
 verb 3" > /etc/openvpn/server/client-common.txt
+# @MULTILINE-END

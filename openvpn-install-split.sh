@@ -9,15 +9,15 @@
 . split-scripts/detect-os.sh
 
 # @MERGE
-. split-scripts/check-sanity.sh
+. split-scripts/check-requirements.sh
 
 # @MERGE
 . split-scripts/utils-openvpn.sh
 
 if [[ ! -e /etc/openvpn/server/server.conf ]]; then
-# @MERGE t 1
-. split-scripts/nonexistent-openvpn-noindent.sh
+	# @MERGE
+	. split-scripts/nonexistent-openvpn.sh
 else
-# @MERGE t 1
-. split-scripts/existing-openvpn-noindent.sh
+	# @MERGE
+	. split-scripts/existing-openvpn.sh
 fi
