@@ -12,7 +12,7 @@
 . main-script-parts/check-requirements.sh
 
 # @MERGE
-. main-script-parts/utils-openvpn.sh
+. main-script-parts/util-functions.sh
 
 if [[ ! -e /etc/openvpn/server/server.conf ]]; then
 	# @MERGE
